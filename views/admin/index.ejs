@@ -1,0 +1,29 @@
+<%- include('../partials/head.ejs')%>
+
+<table>
+	<thead>
+		<td>ID</td>
+		<td>Naam</td>
+		<td>Email</td>
+		<td>Niveau</td>
+		<td></td>
+	</thead>
+	<tbody>
+		<%for (var i=0; i<users.length; i++){%>
+			<tr>
+				<td><%=users[i].id%></td>
+				<td><%=users[i].name%></td>
+				<td><%=users[i].email%></td>
+				<%if (users[i].admin == 1){%>
+					<td>admin</td>
+					<td><a href="/admin/removeAdmin/<%=users[i].id%>">Neem rechten weg</a></td>
+				<%} else{%>
+					<td>bezoeker</td>
+					<td><a href="/admin/makeAdmin/<%=users[i].id%>">Maak admin</a></td>
+				<%}%>
+			</tr>
+		<%}%>
+	</tbody>
+</table>
+
+<%- include('../partials/foot.ejs')%>

@@ -1,0 +1,38 @@
+<%- include('../partials/head.ejs') %>
+
+<div class="cols-2 roomViewImage">
+	<img src="/uploads/<%=details.image%>" alt="Picture of room"/>
+</div>
+<section class="cols-2 roomDetails">
+	<h1><%=details.naam%></h1>
+	<span>€<%=details.prijs%> per persoon per nacht</span>
+	<p>Geschikt voor maximaal <%=details.personen%> personen</p>
+	<%if (loggedIn == true){%>
+	<form action="/bookings/book/<%=details.id%>" Method="POST">
+		<label>Boeking vanaf:
+			<input id='startDate' type="date" name="startdatum" required placeholder="yyyy-mm-dd"/>
+		</label>
+		<label>Boeking tot:
+			<input id='endDate' type="date" name="einddatum" required placeholder="yyyy-mm-dd"/>
+		</label>
+		<label>Aantal personen:
+			<select id="persons" name="personen" data-roomPrice="<%=details.prijs%>">
+				<%for (var i=1; i<=details.personen; i++){%>
+					<option value="<%=i%>"><%=i%></option>
+				<%}%>
+			</select>
+		</label>
+		<p id="pPrice">Totaalprijs: €<span id="totalPrice"></span></p>
+		<input type="submit" value="Boek"/>
+		<%if (dateError != false){%>
+			<p class="error"><%=dateError%></p>
+		<%}%>
+	</form>
+	<%} else{%>
+		<p><a href="/users/login">Login</a> om deze kamer te boeken</p>
+	<%}%>
+</section>
+
+<script src="/js/roomPrice.js"></script>
+
+<%- include('../partials/foot.ejs') %>

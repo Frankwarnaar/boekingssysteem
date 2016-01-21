@@ -1,0 +1,19 @@
+<%- include('../partials/head.ejs') %>
+
+<form action = "/rooms/add" method="post" enctype="multipart/form-data">
+	<label>Naam:
+		<input type="text" name="naam" maxlength="50" required>
+	</label>
+	<label>prijs: (€/persoon/nacht)
+		<input type="number" name="prijs" maxlength="4" required>
+	</label>
+	<label>Aantal personen:
+		<input type="number" name="personen" maxlength="2" required>
+	</label>
+	<label>Afbeelding:
+		<input type="file" name="file" required>
+	</label>
+	<input type="submit" value="Toevoegen"/>
+</form>
+
+<%- include('../partials/foot.ejs') %>

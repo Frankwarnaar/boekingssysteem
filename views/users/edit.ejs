@@ -1,0 +1,20 @@
+<%- include('../partials/head.ejs') %>
+
+<form action="/users/edit" method="post">
+  <label for="Username">Naam:</label>
+    <input type="text" name="name" id="username" value="<%=data.name%>"/>
+	<label for="email">Email:</label>
+    <input type="email" name="email" value="<%=data.email%>" required/>
+	<label for="password">Wachtwoord:</label>
+    <input type="password" name="password" value="<%=data.password%>" required/>
+  <label for="submit"></label>
+    <input type="submit" id="submit" value="Verander"/>
+</form>
+
+<% if(!error == false){ %>
+  <p class="error">
+    <%= error %>
+  </p>
+<% } %>
+
+<%- include('../partials/foot.ejs') %>

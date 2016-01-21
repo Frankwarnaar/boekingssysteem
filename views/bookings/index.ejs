@@ -1,0 +1,30 @@
+<%- include('../partials/head.ejs') %>
+
+<h1>Uw boekingen</h1>
+<%if (loggedIn == false){%>
+	<p><a href="/users/login">Login</a> om uw boekingen te bekijken.</p>
+<%} else if (bookings.length == 0){%>
+	<p>U heeft geen boekingen gedaan.</p>
+<%}else {%>
+	<ul class="bookings">
+		<%for (var i=0; i<bookings.length; i++){%>
+			<li>
+				<section class="imageThumb">
+					<a href="/rooms/<%=bookings[i].roomid%>">
+						<img src="uploads/<%=bookings[i].image%>"/>
+					</a>
+				</section>
+				<section>
+					<a href="/rooms/<%=bookings[i].roomid%>">
+						<h2><%=bookings[i].naam%></h2>
+					</a>
+					<p>Van <%=bookings[i].begindatum%> tot <%=bookings[i].einddatum%><p>
+					<p>Geboekt voor <%=bookings[i].personen%> personen op <%=bookings[i].boekingsdatum%></p>
+					<p>Totaalprijs: €<%=bookings[i].prijs%></p>
+				</section>
+			</li>
+		<%}%>
+	</ul>
+<%}%>
+
+<%- include('../partials/foot.ejs') %>

@@ -1,0 +1,314 @@
+.invisible {
+  display: none; }
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box; }
+
+body {
+  background-color: #FFF7E0;
+  text-color: black;
+  font-family: raleway, helvetica, 'open-sans', sans-serif; }
+
+.banner {
+  width: 100%;
+  height: 320px;
+  position: relative;
+  overflow: hidden; }
+  .banner img {
+    height: 240%;
+    position: absolute;
+    top: -450px;
+    right: -400px;
+    bottom: -400px;
+    left: -400px;
+    margin: auto; }
+
+nav {
+  width: 100%;
+  background-color: black;
+  height: 44px; }
+
+nav > ul {
+  list-style-type: none;
+  margin: 0 auto;
+  float: right;
+  margin-top: 8.5px; }
+  nav > ul li {
+    position: relative;
+    display: inline;
+    padding: 0 16px;
+    padding-bottom: 12px; }
+    nav > ul li span {
+      color: white;
+      font-size: 20px; }
+    nav > ul li a {
+      color: white;
+      font-size: 20px;
+      text-decoration: none;
+      transition: .5s; }
+    nav > ul li a:hover {
+      color: #AF0038; }
+    nav > ul li ul {
+      display: none; }
+  nav > ul li:hover ul {
+    z-index: 3;
+    position: absolute;
+    top: 27px;
+    right: -12px;
+    background-color: black;
+    display: block;
+    width: 223px; }
+    nav > ul li:hover ul li {
+      padding: 12px;
+      text-align: right;
+      float: right; }
+  nav > ul li.hasChildren span:after {
+    content: '';
+    display: inline-block;
+    width: 0;
+    height: 0;
+    margin-left: 2px;
+    vertical-align: middle;
+    border-top: 4px solid;
+    border-right: 4px solid transparent;
+    border-left: 4px solid transparent; }
+
+main {
+  max-width: 968px;
+  padding: 16px;
+  margin: 0 auto;
+  margin-top: 32px;
+  background-color: white;
+  overflow: hidden; }
+  main p {
+    margin-top: 16px; }
+  main a {
+    color: black; }
+  main .cols-2 {
+    width: calc(50% - 16px);
+    float: left; }
+  main .roomViewImage {
+    height: 320px;
+    overflow: hidden;
+    position: relative; }
+    main .roomViewImage img {
+      position: absolute;
+      top: -400px;
+      right: -400px;
+      bottom: -400px;
+      left: -400px;
+      margin: auto;
+      max-height: 100%; }
+  main .roomDetails {
+    padding: 0 16px; }
+    main .roomDetails h1 {
+      text-align: center; }
+    main .roomDetails span {
+      text-align: center;
+      width: 100%;
+      float: left; }
+    main .roomDetails p {
+      float: left;
+      clear: both;
+      width: 100%;
+      text-align: center;
+      margin-bottom: 16px; }
+    main .roomDetails #pPrice {
+      border-top: 1px solid #c5c5c5;
+      padding: 16px;
+      text-align: right; }
+      main .roomDetails #pPrice span {
+        float: none; }
+  main form {
+    max-width: 320px;
+    margin: 0 auto; }
+    main form input {
+      display: block;
+      height: 32px;
+      width: 320px;
+      padding: 4px;
+      border-radius: 3px;
+      border: 1px solid black; }
+    main form input[type='submit'] {
+      margin-top: 16px;
+      border: 3px solid black;
+      border-radius: 3px;
+      padding: 4px 32px;
+      background: none;
+      font-size: 16px;
+      cursor: pointer;
+      height: 32px; }
+    main form input[type='submit']:hover {
+      background-color: black;
+      color: white; }
+    main form label {
+      margin-top: 4px;
+      display: block; }
+  main .error {
+    max-width: 320px;
+    margin: 0 auto;
+    margin-top: 16px; }
+  main .register {
+    max-width: 320px;
+    margin: 0 auto;
+    margin-top: 16px; }
+  main ul.rooms {
+    margin: 0 auto;
+    list-style-type: none; }
+    main ul.rooms li {
+      display: inline-block;
+      width: 296px;
+      height: 210px;
+      margin: 8px;
+      position: relative;
+      border: 1px solid #c4c4c4;
+      border-radius: 2px;
+      background-color: #F7F7F7;
+      float: left;
+      transition: .4s; }
+      main ul.rooms li a {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0; }
+        main ul.rooms li a span {
+          text-align: center;
+          display: block;
+          width: 100%;
+          position: absolute;
+          bottom: 24px;
+          height: 24px;
+          line-height: 24px;
+          vertical-align: center; }
+        main ul.rooms li a span:nth-of-type(2) {
+          bottom: 0; }
+        main ul.rooms li a div.roomImage {
+          width: 100%;
+          height: 160px;
+          position: relative;
+          overflow: hidden; }
+          main ul.rooms li a div.roomImage img {
+            max-height: 130%;
+            position: absolute;
+            top: -400px;
+            right: -400px;
+            bottom: -400px;
+            left: -400px;
+            margin: auto; }
+      main ul.rooms li a.editRoom {
+        background-color: #f5f5f5;
+        position: absolute;
+        height: 48px;
+        width: 48px;
+        border: 1px solid #FFFFFF;
+        border-radius: 50%;
+        top: 8px;
+        right: 8px;
+        left: 182px;
+        opacity: 0;
+        transition: .4s; }
+        main ul.rooms li a.editRoom svg {
+          width: 60%;
+          height: 60%;
+          position: relative;
+          top: 20%;
+          left: 20%; }
+      main ul.rooms li a.removeRoom {
+        background-color: #f5f5f5;
+        position: absolute;
+        height: 48px;
+        width: 48px;
+        border: 1px solid #FFFFFF;
+        border-radius: 50%;
+        top: 8px;
+        right: 8px;
+        left: 238px;
+        opacity: 0;
+        transition: .4s; }
+        main ul.rooms li a.removeRoom svg {
+          width: 70%;
+          height: 70%;
+          position: relative;
+          top: 15%;
+          left: 15%; }
+    main ul.rooms li:hover {
+      box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.1), 0 4px 8px 0 rgba(0, 0, 0, 0.2); }
+      main ul.rooms li:hover a.editRoom {
+        opacity: 100; }
+      main ul.rooms li:hover a.editRoom:hover {
+        background-color: #FFBA52; }
+      main ul.rooms li:hover a.removeRoom {
+        opacity: 100; }
+      main ul.rooms li:hover a.removeRoom:hover {
+        background-color: #FF5252; }
+    main ul.rooms li.addRoom a {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      overflow: hidden; }
+      main ul.rooms li.addRoom a svg {
+        position: absolute;
+        height: 96px;
+        top: 34px;
+        left: calc(145px - 48px); }
+      main ul.rooms li.addRoom a span {
+        display: block;
+        margin: auto;
+        text-align: center;
+        margin-top: 200px; }
+  main ul.bookings {
+    list-style-type: none; }
+    main ul.bookings li {
+      background-color: #F9F9F9;
+      overflow: hidden; }
+      main ul.bookings li section {
+        display: inline-block;
+        float: left;
+        max-width: 600px;
+        padding: 16px; }
+      main ul.bookings li section.imageThumb {
+        width: 240px;
+        height: 160px;
+        margin: 16px;
+        padding: 0;
+        overflow: hidden;
+        position: relative;
+        float: left; }
+        main ul.bookings li section.imageThumb img {
+          max-height: 130%;
+          position: absolute;
+          top: -300px;
+          right: -300px;
+          bottom: -300px;
+          left: -300px;
+          margin: auto; }
+    main ul.bookings li:nth-of-type(2n) {
+      background-color: #E6EEF3; }
+  main table td {
+    padding: 8px 24px;
+    margin: 0;
+    font-size: 16px; }
+  main table thead {
+    border-bottom: 1px solid #c5c5c5;
+    background-color: #f9f9f9; }
+    main table thead td {
+      font-weight: 600; }
+  main table tbody tr {
+    background-color: #E6EEF3; }
+  main table tbody tr:nth-of-type(2n) {
+    background-color: #f9f9f9; }
+
+footer {
+  padding: 16px;
+  margin-top: 32px;
+  background-color: #000;
+  width: 100%;
+  color: white;
+  text-align: center; }
+
+/*# sourceMappingURL=normal.css.map */

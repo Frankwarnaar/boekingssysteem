@@ -1,0 +1,19 @@
+<%- include('../partials/head.ejs') %>
+
+<form action = "" method="post" enctype="multipart/form-data">
+	<label>Naam:
+		<input type="text" name="naam" maxlength="50" value="<%=details.naam%>" required>
+	</label>
+	<label>Prijs: (€/persoon/nacht)
+		<input type="number" name="prijs" maxlength="4" value="<%=details.prijs%>" required>
+	</label>
+	<label>Aantal personen:
+		<input type="number" name="personen" maxlength="2" value="<%=details.personen%>" required>
+	</label>
+	<label>Nieuwe afbeelding:
+		<input type="file" name="file">
+	</label>
+	<input type="submit" value="Wijzigen"/>
+</form>
+
+<%- include('../partials/foot.ejs') %>

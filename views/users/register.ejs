@@ -1,0 +1,19 @@
+<%- include('../partials/head.ejs') %>
+
+<form action="/users/register" method="post">
+  <label for="username">Naam:</label>
+  <input type="text" name="name" id="username" required/>
+  <label for="email">Email:</label>
+  <input type="email" name="email" required/>
+  <label for="password">Wachtwoord:</label>
+  <input type="password" name="password" required/>
+  <input type="submit" id="submit" value="Registreer"/>
+</form>
+
+<% if(!error == false){ %>
+  <p class="error">
+    <%= error %>
+  </p>
+<% } %>
+
+<%- include('../partials/foot.ejs') %>

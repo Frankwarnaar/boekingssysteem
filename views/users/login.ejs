@@ -1,0 +1,19 @@
+<%- include('../partials/head.ejs') %>
+
+<form action="/users/login" method="post">
+	<label for="Username">Username:</label>
+	<input type="text" name="username" id="username" value="" />
+	<label for="password">Password:</label>
+	<input type="password" name="password" value="" />
+	<input type="submit" id="submit" value="Login" />
+</form>
+
+<% if(!error == false){ %>
+  <p class="error">
+    <%= error %>
+  </p>
+<% } %>
+
+<p class="register"> Heeft u nog geen account? U kunt zich <a href="/users/register">hier</a> registreren</p>
+        
+<%- include('../partials/foot.ejs') %>

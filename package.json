@@ -1,0 +1,19 @@
+{
+  "name": "Boekingsysteem 1.0.0",
+  "version": "0.0.1",
+  "private": true,
+  "description": "Dit is een boekingssysteem",
+  "main": "app.js",
+  "dependencies": {
+    "ejs": "^2.3.4",
+    "express": "^4.13.3",
+    "body-parser": "^1.14.1",
+    "express-session": "^1.12.1",
+    "xss-filters":"^1.2.6",
+    "multer":"^1.1.0",
+    "express-myconnection":"^1.0.4",
+    "mysql":"^2.9.0"
+  },
+  "author": "Frank Warnaar",
+  "license": "ISC"
+}
