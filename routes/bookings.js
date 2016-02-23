@@ -41,7 +41,7 @@ function dateFormat(date){
 // Als je naar /bookings gaat, worden alle gegevens van de boekingen van de ingelogde persoon opgehaald
 router.get('/', function(req, res){
 	req.getConnection(function (err, connection){
-		connection.query("SELECT bookings.*, rooms.*, DATEDIFF(einddatum, begindatum) AS nachten FROM bookings JOIN rooms ON rooms.id = bookings.roomid WHERE userid = ? ORDER BY bookings.id DESC", [req.session.userid], function(err, results){
+		connection.query("SELECT bookings.*, rooms.naam, rooms.prijs, rooms.image, DATEDIFF(einddatum, begindatum) AS nachten FROM bookings JOIN rooms ON rooms.id = bookings.roomid WHERE userid = ? ORDER BY bookings.id DESC", [req.session.userid], function(err, results){
 			if (results.length > 0){
 				for (var i=0; i<results.length; i++){
 					results[i].begindatum = dateFormat(results[i].begindatum);
